@@ -44,7 +44,7 @@ python /cvar/jhlab/mguo/SOFTWARE/ldsc/ldsc.py \
 --w-ld-chr /ldsc_files/weights_hm3_no_hla/weights. \
 --frqfile-chr /ldsc_files/1000G_frq/1000G.mac5eur. \
 --print-coefficients \
---out MS_${cell}_buenrostro_ATAC
+--out MS_${cell}_single_buenrostro_ATAC
 done
 
 #Step 4: Partitioned heritability for joint. Example shown below for Buenrostro data, but similar analyses done for other ATAC-seq, ChIP-seq, and PCHiC annotations in the paper
@@ -71,6 +71,6 @@ python /cvar/jhlab/mguo/SOFTWARE/ldsc/ldsc.py \
 --w-ld-chr /ldsc_files/weights_hm3_no_hla/weights. \
 --frqfile-chr /ldsc_files/1000G_frq/1000G.mac5eur. \
 --print-coefficients \
---out MS_${cell1}_${cell2}_buenrostro_ATAC
+--out MS_${cell1}_${cell2}_pairwise_buenrostro_ATAC
 done
 done
