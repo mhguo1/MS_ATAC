@@ -65,12 +65,10 @@ for cell2 in B CD4 CD8 CLP CMP Ery GMP HSC LMPP MEP MPP Mega Mono NK mDC pDC_ATA
 do
 
 python /cvar/jhlab/mguo/SOFTWARE/ldsc/ldsc.py \
---h2 MS.sumstats.gz \
---overlap-annot \
---ref-ld-chr /ldsc_files/baseline/baseline.,/ldsc_files/cell_type_groups/buenrostro/${cell1}_ATAC.,/ldsc_files/cell_type_groups/buenrostro/${cell2}_ATAC. \
+--h2-cts MS.sumstats.gz \
+--ref-ld-chr-cts ${cell1}_${cell2}.ldcts \ #Create this ldcts file for a given set of annotations as described here https://github.com/bulik/ldsc/wiki/Cell-type-specific-analyses
+--ref-ld-chr /ldsc_files/baseline/baseline. \ 
 --w-ld-chr /ldsc_files/weights_hm3_no_hla/weights. \
---frqfile-chr /ldsc_files/1000G_frq/1000G.mac5eur. \
---print-coefficients \
 --out MS_${cell1}_${cell2}_pairwise_buenrostro_ATAC
 done
 done
