@@ -13,7 +13,7 @@ python /software/ldsc/munge_sumstats.py \
 --N-cas 14802 \
 --N-con 26703
 
-#Step 2: Compute LD scores for ATAC-seq peaks from each cell type. Example shown below for Buenrostro data, but similar analyses done for Calderon et al. data and MS patient data.
+#Step 2: Compute LD scores for ATAC-seq peaks from each cell type. Example shown below for Buenrostro data, but similar analyses done for other ATAC-seq, ChIP-seq, and PCHiC annotations in the paper
 for cell in B CD4 CD8 CLP CMP Ery GMP HSC LMPP MEP MPP Mega Mono NK mDC pDC_ATAC
 do
 for i in {1..22}
@@ -33,7 +33,7 @@ python /software/ldsc/ldsc.py \
 done
 done
 
-#Step 3: Partitioned heritability for single annotation. Example shown below for Buenrostro data, but similar analyses done for Calderon et al. data and MS patient data.
+#Step 3: Partitioned heritability for single annotation. Example shown below for Buenrostro data, but similar analyses done for other ATAC-seq, ChIP-seq, and PCHiC annotations in the paper
 for cell in B CD4 CD8 CLP CMP Ery GMP HSC LMPP MEP MPP Mega Mono NK mDC pDC_ATAC
 do
 
@@ -47,7 +47,7 @@ python /cvar/jhlab/mguo/SOFTWARE/ldsc/ldsc.py \
 --out MS_${cell}_buenrostro_ATAC
 done
 
-#Step 4: Partitioned heritability for joint. Example shown below for Buenrostro data, but similar analyses done for Calderon et al. data and MS patient data.
+#Step 4: Partitioned heritability for joint. Example shown below for Buenrostro data, but similar analyses done for other ATAC-seq, ChIP-seq, and PCHiC annotations in the paper
 python /cvar/jhlab/mguo/SOFTWARE/ldsc/ldsc.py \
 --h2 MS.sumstats.gz \
 --overlap-annot \
@@ -58,7 +58,7 @@ python /cvar/jhlab/mguo/SOFTWARE/ldsc/ldsc.py \
 --out MS_joint_buenrostro_ATAC
 
 
-#Step 4: Partitioned heritability for pairwise model. Example shown below for Buenrostro data, but similar analyses done for Calderon et al. data and MS patient data.
+#Step 4: Partitioned heritability for pairwise model. Example shown below for Buenrostro data, but similar analyses done for other ATAC-seq, ChIP-seq, and PCHiC annotations in the paper
 for cell1 in B CD4 CD8 CLP CMP Ery GMP HSC LMPP MEP MPP Mega Mono NK mDC pDC_ATAC
 do
 for cell2 in B CD4 CD8 CLP CMP Ery GMP HSC LMPP MEP MPP Mega Mono NK mDC pDC_ATAC
