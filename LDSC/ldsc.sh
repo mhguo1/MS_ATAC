@@ -37,7 +37,7 @@ done
 for cell in B CD4 CD8 CLP CMP Ery GMP HSC LMPP MEP MPP Mega Mono NK mDC pDC_ATAC
 do
 
-python /cvar/jhlab/mguo/SOFTWARE/ldsc/ldsc.py \
+python /SOFTWARE/ldsc/ldsc.py \
 --h2 MS.sumstats.gz \
 --overlap-annot \
 --ref-ld-chr /ldsc_files/baseline/baseline.,/ldsc_files/cell_type_groups/buenrostro/${cell}_ATAC. \
@@ -48,7 +48,7 @@ python /cvar/jhlab/mguo/SOFTWARE/ldsc/ldsc.py \
 done
 
 #Step 4: Partitioned heritability for joint. Example shown below for Buenrostro data, but similar analyses done for other ATAC-seq, ChIP-seq, and PCHiC annotations in the paper
-python /cvar/jhlab/mguo/SOFTWARE/ldsc/ldsc.py \
+python /SOFTWARE/ldsc/ldsc.py \
 --h2 MS.sumstats.gz \
 --overlap-annot \
 --ref-ld-chr /ldsc_files/baseline/baseline.,/ldsc_files/cell_type_groups/buenrostro/B_ATAC.,/ldsc_files/cell_type_groups/buenrostro/CD4_ATAC.,/ldsc_files/cell_type_groups/buenrostro/CD8_ATAC.,/ldsc_files/cell_type_groups/buenrostro/CLP_ATAC.,/ldsc_files/cell_type_groups/buenrostro/CMP_ATAC.,/ldsc_files/cell_type_groups/buenrostro/Ery_ATAC.,/ldsc_files/cell_type_groups/buenrostro/GMP_ATAC.,/ldsc_files/cell_type_groups/buenrostro/HSC_ATAC.,/ldsc_files/cell_type_groups/buenrostro/LMPP_ATAC.,/ldsc_files/cell_type_groups/buenrostro/MEP_ATAC.,/ldsc_files/cell_type_groups/buenrostro/MPP_ATAC.,/ldsc_files/cell_type_groups/buenrostro/Mega_ATAC.,/ldsc_files/cell_type_groups/buenrostro/Mono_ATAC.,/ldsc_files/cell_type_groups/buenrostro/NK_ATAC.,/ldsc_files/cell_type_groups/buenrostro/mDC_ATAC.,/ldsc_files/cell_type_groups/buenrostro/pDC_ATAC. \
@@ -64,7 +64,7 @@ do
 for cell2 in B CD4 CD8 CLP CMP Ery GMP HSC LMPP MEP MPP Mega Mono NK mDC pDC_ATAC
 do
 
-python /cvar/jhlab/mguo/SOFTWARE/ldsc/ldsc.py \
+python /SOFTWARE/ldsc/ldsc.py \
 --h2-cts MS.sumstats.gz \
 --ref-ld-chr-cts ${cell1}_${cell2}.ldcts \ #Create this ldcts file for a given set of annotations as described here https://github.com/bulik/ldsc/wiki/Cell-type-specific-analyses
 --ref-ld-chr /ldsc_files/baseline/baseline. \ 
