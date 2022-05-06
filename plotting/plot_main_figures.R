@@ -99,7 +99,7 @@ cd4.alphas<-c(seq(0.5, 1, length.out=6)[c(1,3:6)],seq(0.5,1,length.out=2))
 b.colors<-rep(pastel[3], length(b.cells))
 b.alphas<-seq(0.5, 1, length.out=length(b.cells))
 
-cald.single<-do.call(rbind,lapply(list.files("g/results/LDSC/Calderon/single", pattern="single_calderon_ATAC", full.names = T),
+cald.single<-do.call(rbind,lapply(list.files("/results/LDSC/Calderon/single", pattern="single_calderon_ATAC", full.names = T),
                                   read.delim))
 cald.single<-cald.single[grepl("atac", cald.single$Category, ignore.case=T),]
 cald.single$Category<-str_split_fixed(cald.single$Category, "\\_U", 2)[,1]
